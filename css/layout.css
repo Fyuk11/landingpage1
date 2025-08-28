@@ -1,0 +1,369 @@
+/* ===============================
+   Layout Styles
+   =============================== */
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--color-light);
+  box-shadow: var(--shadow-soft);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav__links a {
+  font-weight: 500;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--color-accent);
+  transition: var(--transition);
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Burger menu (mobile) */
+.nav__burger {
+  display: none;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.nav__burger::before,
+.nav__burger::after,
+.nav__burger div {
+  content: "";
+  background: var(--color-dark);
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.nav__burger::before {
+  top: 0;
+}
+
+.nav__burger::after {
+  bottom: 0;
+}
+
+.nav__burger div {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 90vh;
+  background: var(--color-dark);
+  color: var(--color-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* SERVICES */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* PROJECTS */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  z-index: 0;  /* 0 clave para que el ::before quede detrás */
+}
+.projects__grid::before {
+  content: "";
+  position: absolute;
+  top: -80px;        /* invade desde arriba hacia la sección de proyectos */
+  left: 0;
+  width: 100%;
+  height: 999px;     /* alto de la mancha, probalo según tu PNG */
+  background: url('../assets/img/splash.png') no-repeat center/contain;
+  opacity: 0.35;     /* ajustá intensidad */
+  z-index: -1;       /* siempre detrás del contenido */
+  pointer-events: none; /* por si acaso, evita bloquear links */
+}
+
+
+/* FAQ */
+.faq__list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+} 
+
+/* Splash de pintura en FAQ */
+/*.faq.section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* asegura que las manchas no salgan de la sección *
+}
+
+/* Mancha arriba *
+.faq.section::before {
+  content: "";
+  position: absolute;
+  top: -200px; /* sube hacia la sección de proyectos *
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: var(--color-accent);
+  border-radius: 50% 40% 60% 50%;
+  filter: blur(150px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Mancha abajo *
+.faq.section::after {
+  content: "";
+  position: absolute;
+  bottom: -200px; /* baja hacia la sección de contacto *
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: var(--color-accent);
+  border-radius: 50% 50% 40% 60%;
+  filter: blur(150px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Responsive *
+@media (max-width: 768px) {
+  .faq.section::before,
+  .faq.section::after {
+    width: 400px;
+    height: 400px;
+    filter: blur(100px);
+  }
+  .faq.section::before { top: -150px; left: -80px; }
+  .faq.section::after { bottom: -150px; right: -80px; }
+}
+*/
+.faq {
+  position: relative;
+  z-index: 1; /* 0 clave para que el ::before quede detrás */
+  overflow: visible; /* el splash puede sobresalir hacia arriba y abajo */
+}
+
+.faq .faq-splash {
+  position: absolute;
+  top: -150px; /* ajusta según la altura que quieras que manche */
+  left: 0;
+  width: 100%;
+  height: 400px; /* ajusta según el efecto */
+  z-index: -1; /* queda detrás del contenido */
+}
+
+@media (max-width: 768px) {
+  .faq .faq-splash {
+    height: 300px;
+    top: -100px;
+  }
+}
+
+
+/*
+.faq::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;     /* invade la sección de contacto *
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url('../assets/img/splash.png') no-repeat center/contain;
+  opacity: 0.35;
+  z-index: -1;
+  transform: rotate(180deg); /* invertís la mancha para variar *
+}
+*/
+
+
+
+/* Info banner */
+.info-banner {
+  background: var(--brand-light);
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 24px;
+  margin: 60px auto;
+  max-width: 900px;
+  position: relative;
+}
+
+.info-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--brand-dark);
+}
+
+.info-banner p {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.info-banner .btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+
+/* CONTACT */
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__menu {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer__menu a {
+  color: var(--color-light);
+  transition: var(--transition);
+}
+
+.footer__menu a:hover {
+  color: var(--color-accent);
+}
+
+.footer__copy {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* BOTONES FLOTANTES */
+.btn-whatsapp,
+.btn-scroll-top {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-strong);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-whatsapp:hover,
+.btn-scroll-top:hover {
+  transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+  right: 20px;
+}
+
+.btn-scroll-top {
+  right: 80px;
+  display: none; /* Visible solo con scroll */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    background: var(--color-light);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav__links.active {
+    display: flex;
+  }
+
+  .nav__burger {
+    display: block;
+  }
+}

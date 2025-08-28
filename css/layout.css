@@ -26,22 +26,43 @@
 }
 
 /* NAVIGATION */
+/* Mobile first: menú oculto */
+/* Mobile first: menú oculto */
 .nav {
-  display: flex;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background: var(--color-light);
+  box-shadow: var(--shadow-soft);
+  transition: right 0.3s ease;
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+.nav.active {
+  right: 0;
 }
 
 .nav__links {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .nav__links a {
   font-weight: 500;
   padding: 0.5rem;
   position: relative;
+  color: var(--color-dark);
+  text-decoration: none;
 }
 
+/* Subrayado animado en links */
 .nav__links a::after {
   content: "";
   position: absolute;
@@ -50,19 +71,23 @@
   bottom: -4px;
   left: 0;
   background: var(--color-accent);
-  transition: var(--transition);
+  transition: width 0.3s ease;
 }
 
 .nav__links a:hover::after {
   width: 100%;
 }
 
-/* Burger menu (mobile) */
+/* Burger visible solo en mobile */
 .nav__burger {
-  display: none;
+  display: block;
   width: 30px;
-  height: 20px;
+  height: 22px;
   position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1100; /* sobre el menú */
 }
 
 .nav__burger::before,
@@ -74,7 +99,7 @@
   height: 3px;
   width: 100%;
   border-radius: 2px;
-  transition: var(--transition);
+  transition: transform 0.3s, top 0.3s, bottom 0.3s, opacity 0.3s;
 }
 
 .nav__burger::before {
@@ -88,6 +113,42 @@
 .nav__burger div {
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Animación de cruz cuando está activo */
+.nav__burger.active::before {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.nav__burger.active::after {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.nav__burger.active div {
+  opacity: 0;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .nav {
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    padding-top: 0;
+    right: auto;
+  }
+
+  .nav__links {
+    flex-direction: row;
+  }
+
+  .nav__burger {
+    display: none;
+  }
 }
 
 /* HERO */

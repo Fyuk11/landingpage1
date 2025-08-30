@@ -4,8 +4,39 @@
 .logo { font-size:1.5rem; font-weight:800; }
 
 /* NAV */
-.nav { position: fixed; inset: 0 0 0 30%; right: -100%; background: var(--color-light); transition: right .3s ease; padding-top: 80px; box-shadow: var(--shadow-soft); z-index: 1000; }
-.nav.active { right: 0; }
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  right: -70%;   /* menú escondido a la derecha */
+  width: 70%;    /* ancho del menú */
+  height: 100vh;
+  background: var(--color-light);
+  transition: right .3s ease;
+  padding-top: 80px;
+  box-shadow: var(--shadow-soft);
+  z-index: 1000;
+}
+.nav.active {
+  right: 0;  /* aparece desde la derecha */
+}
+
+/* Overlay */
+.nav__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 900;
+}
+.nav.active ~ .nav__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 .nav__links { display:flex; flex-direction:column; gap:1.5rem; padding:0 1.5rem; }
 .nav__links a { font-weight:600; position:relative; }
 .nav__links a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--color-accent); transition:width .3s ease; }
@@ -20,11 +51,29 @@
 .nav__burger.active::after { transform: rotate(-45deg); bottom:50%; }
 .nav__burger.active div { opacity:0; }
 
+
 @media (min-width: 768px) {
-  .nav { position:static; height:auto; right:auto; padding-top:0; box-shadow:none; inset:auto; }
-  .nav__links { flex-direction:row; }
-  .nav__burger { display:none; }
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    box-shadow: none;
+    background: transparent; /* para desktop */
+  }
+
+  .nav__links {
+    flex-direction: row;
+    justify-content: flex-end; /* 👈 alinea los links a la derecha */
+    gap: 2rem;
+  }
+
+  .nav__burger { display: none; }
+  .nav__overlay { display: none; } /* overlay solo en mobile */
 }
+
+
+
 
 /* HERO con imagen de fondo + overlay, mantiene “esencia” */
 .hero { min-height: 92vh; display:flex; align-items:center; justify-content:center; text-align:center; color: var(--color-light); position:relative; overflow:hidden; background: var(--color-dark); }

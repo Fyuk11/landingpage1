@@ -1,209 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RodriGOmez - Landing Pages Profesionales</title>
-  <meta name="description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión. Hablemos y llevá tu negocio online al siguiente nivel.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RodriGOmez — Landing Pages Profesionales</title>
+  <meta name="description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión. Hablemos y llevá tu negocio online al siguiente nivel." />
+  <meta name="theme-color" content="#0b0d10" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="RodriGOmez - Landing Pages Profesionales">
-  <meta property="og:description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión.">
-  <meta property="og:image" content="assets/img/og-image.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tusitio.netlify.app">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rodrigomezlanding.netlify.app/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="RodriGOmez — Landing Pages Profesionales" />
+  <meta property="og:description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rodrigomezlanding.netlify.app/" />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preload" as="image" href="assets/img/hero-bg.jpg" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- JSON-LD (negocio/portafolio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rodrigo Gomez",
+    "jobTitle": "Web Designer",
+    "url": "https://rodrigomezlanding.netlify.app/",
+    "sameAs": [
+      "https://www.instagram.com/tuusuario",
+      "https://www.linkedin.com/in/tuusuario"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- HEADER -->
-<header class="header">
-  <div class="container nav-container">
-    <a href="#hero" class="logo">RodriGOmez</a>
+  <!-- ================= HEADER ================= -->
+  <header class="header" role="banner">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" aria-label="Ir al inicio">RodriGOmez</a>
 
-    <!-- Burger -->
-    <button class="nav__burger" aria-label="Abrir menú">
-      <div></div>
-    </button>
+      <!-- Burger -->
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <div></div>
+      </button>
 
-    <!-- Nav -->
-    <nav class="nav">
-      <ul class="nav__links">
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
-  <!-- HERO -->
-<section id="hero" class="hero">
-  <div class="container hero__content reveal fade-up">
-    <h1>Landing Pages que conectan</h1>
-    <p>Modernas, rápidas y diseñadas para tu negocio.</p>
-    <a href="https://wa.me/XXXXXXXXXXX" target="_blank" class="btn btn--primary reveal zoom-in">Hablemos</a>
-  </div>
-</section>
-
-
-  <!-- SERVICES -->
-<section id="services" class="services section">
-  <div class="container">
-    <h2 class="reveal fade-up">Servicios</h2>
-    <div class="services__grid">
-        <!-- Tarjetas de servicio -->
-      <article class="service-card reveal fade-up">
-        <h3>Diseño Moderno</h3>
-        <p>Minimalista, responsivo y pensado para destacar tu marca.</p>
-      </article>
-      <article class="service-card reveal fade-up">
-        <h3>SEO Básico</h3>
-        <p>Optimizado para buscadores y redes sociales.</p>
-      </article>
-      <article class="service-card reveal fade-up">
-        <h3>Funcionalidad</h3>
-        <p>Botones flotantes, formularios y animaciones suaves.</p>
-      </article>
+      <!-- Nav -->
+      <nav id="site-nav" class="nav" role="navigation">
+        <ul class="nav__links">
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="section hero" aria-label="Hero">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <h1>Construimos experiencias digitales</h1>
+        <p>Landing pages modernas, rápidas y pensadas para convertir.</p>
+        <a href="#contact" class="btn btn--primary">Hablemos</a>
+      </div>
+    </section>
 
-  <!-- PROJECTS -->
-<section id="projects" class="projects section">
-  <div class="container">
-    <h2 class="reveal fade-up">Proyectos</h2>
-    <div class="projects__grid">
-      <article class="project-card reveal fade-left">
-        <img src="assets/img/project1.jpg" alt="Proyecto 1">
-        <h3>Barbería</h3>
-      </article>
-      <article class="project-card reveal fade-right">
-        <img src="assets/img/project2.jpg" alt="Proyecto 2">
-        <h3>Local Veggie</h3>
-      </article>
-      <article class="project-card reveal fade-left">
-        <img src="assets/img/project3.jpg" alt="Proyecto 3">
-        <h3>SaaS Startup</h3>
-      </article>
-      <article class="project-card reveal fade-right">
-        <img src="assets/img/project4.jpg" alt="Proyecto 4">
-        <h3>Restaurante</h3>
-      </article>
+    <!-- separador -->
+    <div class="separator" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path fill="#fff" d="M0,96L1440,48L1440,0L0,0Z"></path>
+      </svg>
     </div>
-  </div>
-</section>
 
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>Sobre mí</h2>
+        <p>Un texto breve sobre tu misión, visión o lo que quieras transmitir.</p>
+      </div>
+    </section>
 
-  <!-- FAQ -->
-<!-- <section id="faq" class="faq section">
-  <div class="container">
-    <h2 class="reveal fade-up">Preguntas Frecuentes</h2>
-    <div class="faq__list">
-      <article class="faq__item reveal fade-up">
-        <button class="faq__question">¿Qué incluye una landing?</button>
-        <div class="faq__answer">
-          <p>Incluye diseño moderno, SEO básico, contacto funcional y deploy listo para usar.</p>
-        </div>
-      </article>
-      <article class="faq__item reveal fade-up">
-        <button class="faq__question">¿Cuánto tarda?</button>
-        <div class="faq__answer">
-          <p>En pocos días podés tener tu página online.</p>
-        </div>
-      </article>
+    <!-- separador -->
+    <div class="separator" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path fill="#f9fafb" d="M0,32L1440,128L1440,0L0,0Z"></path>
+      </svg>
     </div>
-  </div>
-</section>
--->
 
-<!-- Info banner -->
-<section class="info-banner">
-  <div class="container">
-    <h2>Impulsa tu negocio con una landing page profesional</h2>
-    <p>Diseñadas para convertir visitas en clientes, con un enfoque minimalista, rápido y optimizado para SEO.</p>
-    <a href="#contacto" class="btn-primary">Hablemos</a>
-  </div>
-</section>
-
-
-
-
-<!-- Splash de pintura detrás de FAQ -->
-<section id="faq" class="faq section">
-  <!-- SVG de fondo -->
- <!---- <svg class="faq-splash" viewBox="0 0 1440 400" preserveAspectRatio="none">
-    <path d="M0,100 C400,200 1040,0 1440,150 L1440,400 L0,400 Z" fill="var(--color-accent)" opacity="0.15"/>
-  </svg>
--->
-<!-- Splash de pintura detrás de FAQ -->
-<svg class="page-splash" viewBox="0 0 1440 600" preserveAspectRatio="none">
-  <path d="M0,300 
-           C200,200 400,500 600,300 
-           C800,100 1000,400 1200,250 
-           C1400,100 1440,300 1440,600 
-           L0,600 Z" 
-        fill="var(--color-accent)" opacity="0.15"/>
-</svg>
-
-
-  <div class="container">
-    <h2 class="reveal fade-up">Preguntas Frecuentes</h2>
-    <div class="faq__list">
-      <article class="faq__item reveal fade-up">
-        <button class="faq__question">¿Qué incluye una landing?</button>
-        <div class="faq__answer">
-          <p>Incluye diseño moderno, SEO básico, contacto funcional y deploy listo para usar.</p>
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2>Servicios</h2>
+        <div class="services__grid">
+          <article class="service-card">
+            <h3>Landing Pages</h3>
+            <p>Diseños rápidos, modernos y optimizados.</p>
+          </article>
+          <article class="service-card">
+            <h3>Plantillas</h3>
+            <p>Para WordPress, Shopify y sitios estáticos.</p>
+          </article>
+          <article class="service-card">
+            <h3>Asesoría</h3>
+            <p>Te acompaño en la estrategia digital.</p>
+          </article>
         </div>
-      </article>
-      <article class="faq__item reveal fade-up">
-        <button class="faq__question">¿Cuánto tarda?</button>
-        <div class="faq__answer">
-          <p>En pocos días podés tener tu página online.</p>
-        </div>
-      </article>
+      </div>
+    </section>
+
+    <!-- separador -->
+    <div class="separator" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path fill="#fff" d="M0,128L1440,32L1440,0L0,0Z"></path>
+      </svg>
     </div>
-  </div>
-</section>
 
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div class="projects__grid">
+          <article class="project-card">
+            <img src="assets/img/proj-1.jpg" alt="Proyecto 1" loading="lazy" />
+            <h3>Proyecto 1</h3>
+          </article>
+          <article class="project-card">
+            <img src="assets/img/proj-2.jpg" alt="Proyecto 2" loading="lazy" />
+            <h3>Proyecto 2</h3>
+          </article>
+          <article class="project-card">
+            <img src="assets/img/proj-3.jpg" alt="Proyecto 3" loading="lazy" />
+            <h3>Proyecto 3</h3>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!-- Splash de pintura detrás de FAQ -->
-<svg class="page-splash" viewBox="0 0 1440 600" preserveAspectRatio="none">
-  <path d="M0,300 
-           C200,200 400,500 600,300 
-           C800,100 1000,400 1200,250 
-           C1400,100 1440,300 1440,600 
-           L0,600 Z" 
-        fill="var(--color-accent)" opacity="0.15"/>
-</svg>
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="section faq">
+      <img class="faq-splash" src="assets/img/splash.png" alt="" aria-hidden="true" />
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq__list" id="faq-list">
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">¿Tiempo de entrega?</button>
+            <div class="faq__answer" hidden>
+              <p>Según el alcance, entre 7 y 15 días hábiles.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">¿Qué incluye?</button>
+            <div class="faq__answer" hidden>
+              <p>Diseño, maquetado, SEO básico, optimización y deploy.</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">¿Cómo empezamos?</button>
+            <div class="faq__answer" hidden>
+              <p>Agendamos una llamada y definimos objetivos y estilo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contacto</h2>
+        <form id="contact-form" class="contact__form" novalidate>
+          <input type="text" name="name" placeholder="Tu nombre" autocomplete="name" required />
+          <input type="email" name="email" placeholder="Tu email" autocomplete="email" required />
+          <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+          <label class="sr-only" for="privacy">Acepto la política de privacidad</label>
+          <div class="form__row">
+            <input id="privacy" type="checkbox" required /> Acepto la política de privacidad
+          </div>
+          <button type="submit" class="btn btn--primary">Enviar</button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-  <!-- CONTACT -->
-<section id="contact" class="contact section">
-  <div class="container reveal fade-up">
-    <h2>Contacto</h2>
-    <form id="contactForm" class="contact__form reveal fade-up">
-      <input type="text" name="name" placeholder="Nombre" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Mensaje" required></textarea>
-      <button type="submit" class="btn btn--primary reveal zoom-in">Enviar</button>
-    </form>
-  </div>
-</section>
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" role="contentinfo">
     <div class="container footer__content">
       <a href="#hero" class="logo">RodriGOmez</a>
       <ul class="footer__menu">
@@ -212,25 +204,24 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
-      <p class="footer__copy">© 2025 RodriGOmez. Todos los derechos reservados.</p>
+      <p class="footer__copy">© <span id="year"></span> RodriGOmez. Todos los derechos reservados.</p>
     </div>
   </footer>
 
   <!-- BOTONES FLOTANTES -->
-  <a href="https://wa.me/XXXXXXXXXXX" target="_blank" class="btn-whatsapp" aria-label="WhatsApp">
-    <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
+  <a href="https://wa.me/XXXXXXXXXXX" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="WhatsApp">
+    <img src="assets/icons/whatsapp.svg" alt="" aria-hidden="true" />
   </a>
   <button class="btn-scroll-top" aria-label="Volver arriba">
-    <img src="assets/icons/arrow-up.svg" alt="Ir arriba">
+    <img src="assets/icons/arrow-up.svg" alt="" aria-hidden="true" />
   </button>
 
   <!-- JS -->
-  <script src="js/main.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/form.js"></script>
-  <script src="js/faq.js"></script>
-  <script src="js/scroll.js"></script>
-  <script src="js/whatsapp.js"></script>
-
+  <script src="js/nav.js" defer></script>
+  <script src="js/faq.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/whatsapp.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

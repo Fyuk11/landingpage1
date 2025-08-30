@@ -3,21 +3,20 @@
    =============================== */
 
 function initFAQ() {
-  const faqItems = document.querySelectorAll(".faq__item");
 
-  faqItems.forEach(item => {
-    const question = item.querySelector(".faq__question");
-    question.addEventListener("click", () => {
-      // Toggle activo
-      const isActive = item.classList.contains("active");
+  const items = document.querySelectorAll('.faq__item');
+  items.forEach(item => {
+    const btn = item.querySelector('.faq__question');
+    const panel = item.querySelector('.faq__answer');
+    if(!btn || !panel) return;
 
-      // Cierra todos los items
-      faqItems.forEach(i => i.classList.remove("active"));
-
-      // Si no estaba activo, abrir
-      if (!isActive) {
-        item.classList.add("active");
-      }
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      item.classList.toggle('active');
+      if(panel.hasAttribute('hidden')) panel.removeAttribute('hidden');
+      const contentHeight = panel.scrollHeight;
+      panel.style.maxHeight = item.classList.contains('active') ? contentHeight + 'px' : 0;
     });
   });
-}
+};

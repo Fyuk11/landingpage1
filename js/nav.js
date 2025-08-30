@@ -6,9 +6,21 @@
    Navigation
    =============================== */
 function initNavigation() {
-  const nav = document.querySelector(".nav");
-  const burger = document.querySelector(".nav__burger");
-  const links = document.querySelectorAll(".nav__links a");
+
+  const burger = document.querySelector('.nav__burger');
+  const nav = document.querySelector('.nav');
+  if(!burger || !nav) return;
+
+  const toggle = () => {
+    const active = nav.classList.toggle('active');
+    burger.classList.toggle('active', active);
+    burger.setAttribute('aria-expanded', active ? 'true' : 'false');
+    document.body.style.overflow = active ? 'hidden' : '';
+  };
+
+  burger.addEventListener('click', toggle);
+  nav.addEventListener('click', (e)=>{ if(e.target.tagName === 'A') toggle(); });
+};
 
   if (!nav || !burger) return;
 
@@ -49,4 +61,3 @@ function initNavigation() {
       closeMenu();
     }
   });
-}

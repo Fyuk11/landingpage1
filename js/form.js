@@ -3,33 +3,25 @@
    =============================== */
 
 function initForm() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  if(!form) return;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    status.textContent = '';
 
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    // Validaciones simples
-    if (!name || !email || !message) {
-      alert("Por favor, completa todos los campos.");
+    const data = Object.fromEntries(new FormData(form));
+    if(!data.name || !data.email || !data.message){
+      status.textContent = 'Completá todos los campos.';
       return;
     }
 
-    // Validar email simple
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("Por favor, ingresa un email válido.");
-      return;
-    }
-
-    // Simulación de envío
-    alert("¡Formulario enviado con éxito! Te responderemos pronto.");
-
-    // Limpiar formulario
+    // TODO: integra tu endpoint (Web3Forms, Netlify Forms, Formspree…)
+    // Ejemplo de éxito simulado:
+    await new Promise(r => setTimeout(r, 600));
     form.reset();
+    status.textContent = '¡Mensaje enviado! Te responderé a la brevedad.';
   });
-}
+};
+

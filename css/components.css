@@ -1,174 +1,20 @@
-/* ===============================
-   Components Styles
-   =============================== */
+/* Tarjetas de servicio */
+.service-card { background: var(--color-light); padding:2rem; border-radius:16px; box-shadow: var(--shadow-soft); text-align:center; transition: var(--transition); }
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-strong); }
 
-/* BOTONES */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: var(--transition);
-  border: none;
-}
-
-.btn--primary {
-  background: var(--color-accent);
-  color: var(--color-dark);
-}
-
-.btn--primary:hover {
-  box-shadow: 0 0 15px var(--color-accent);
-  transform: translateY(-2px);
-}
-
-/* SERVICE CARDS */
-.service-card {
-  background: var(--color-light);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition);
-  text-align: center;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-strong);
-}
-
-.service-card h3 {
-  margin-bottom: 1rem;
-  color: var(--color-dark);
-}
-
-/* PROJECT CARDS */
-.project-card {
-  background: var(--color-light);
-  border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  transition: var(--transition);
-  text-align: center;
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.project-card h3 {
-  padding: 1rem;
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-strong);
-}
+/* Proyectos */
+.project-card { background: var(--color-light); border-radius:16px; overflow:hidden; box-shadow: var(--shadow-soft); transition: var(--transition); text-align:center; }
+.project-card img { width:100%; height:auto; display:block; }
+.project-card h3 { padding:1rem; }
+.project-card:hover { transform: scale(1.02); box-shadow: var(--shadow-strong); }
 
 /* FAQ (Acordeón) */
-.faq__item {
-  border-radius: 12px;
-  background: var(--color-gray);
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-}
+.faq__list { max-width: 800px; margin: 0 auto; display:grid; gap:1rem; }
+.faq__item { border-radius:12px; background: var(--color-gray); box-shadow: var(--shadow-soft); overflow:hidden; }
+.faq__question { width:100%; padding:1rem 1.25rem; font-size:1rem; font-weight:700; text-align:left; cursor:pointer; }
+.faq__answer { max-height: 0; overflow:hidden; transition: max-height .35s ease, padding .25s ease; padding: 0 1.25rem; }
+.faq__item.active .faq__answer { max-height: 220px; padding: 1rem 1.25rem; }
 
-.faq__question {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-
-.faq__answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 1.5rem;
-}
-
-.faq__item.active .faq__answer {
-  max-height: 200px;
-  padding: 1rem 1.5rem;
-}
-
-/* FORMULARIO */
-.contact__form input,
-.contact__form textarea {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  resize: none;
-}
-
-.contact__form button {
-  width: 100%;
-}
-
-/* SPLASH / CURVAS ENTRE SECCIONES */
-.section {
-  position: relative;
-  z-index: 1;
-}
-
-.section::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Ejemplo: curva dorada entre hero y servicios */
-.hero::after {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path fill="%23d4af37" d="M0,0L1440,120L1440,0L0,0Z"></path></svg>');
-}
-
-/* Ejemplo de splash tipo blob para una sección */
-.services {
-  background: var(--color-gray);
-}
-
-.services::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  width: 400px;
-  height: 400px;
-  background: var(--color-accent);
-  border-radius: 50% 40% 60% 50%;
-  filter: blur(80px);
-  opacity: 0.2;
-  z-index: -1;
-}
-
-/* SPLASH */ 
-.page-splash {
-  position: absolute;
-  top: 0; /* puede ajustarse según dónde quieras empezar la mancha */
-  left: 0;
-  width: 100%;
-  height: 600px; /* ajustable según la cobertura deseada */
-  z-index: -1; /* detrás del contenido */
-  pointer-events: none; /* no interfiere con clicks */
-}
-
-@media (max-width: 768px) {
-  .page-splash {
-    height: 400px;
-  }
-}
- 
+/* Separadores curvos (opcional) */
+.section::after { content:""; display:block; position:absolute; left:0; right:0; bottom:-2px; height:60px; background-repeat:no-repeat; background-size:cover; }
+.hero::after { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120"><path fill="%23d4af37" d="M0,0L1440,120L1440,0L0,0Z"/></svg>'); }

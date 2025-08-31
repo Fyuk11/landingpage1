@@ -1,5 +1,23 @@
 /* HEADER */
-.header { position: sticky; top: 0; width: 100%; background: var(--color-light); box-shadow: var(--shadow-soft); z-index: 1000; }
+/* .header { position: sticky; top: 0; width: 100%; background: var(--color-light); box-shadow: var(--shadow-soft); z-index: 1000; } */
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--color-light); /* ← inicial sólido */
+  box-shadow: var(--shadow-soft);
+  z-index: 1000;
+  transition: background .3s ease, backdrop-filter .3s ease;
+}
+/* HEADER al hacer scroll */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.75); /* semi transparente */
+  backdrop-filter: blur(10px);           /* blur elegante */
+  box-shadow: var(--shadow-soft);
+}
+
+
 .nav-container { display:flex; justify-content:space-between; align-items:center; height:70px; }
 .logo { font-size:1.5rem; font-weight:800; }
 
@@ -71,6 +89,16 @@
   .nav__burger { display: none; }
   .nav__overlay { display: none; } /* overlay solo en mobile */
 }
+@media (min-width: 768px) {
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    box-shadow: none;
+    background: transparent; /* limpio */
+  }
+}
 
 
 
@@ -122,3 +150,5 @@
 .btn-whatsapp:hover, .btn-scroll-top:hover { transform: translateY(-3px); }
 .btn-whatsapp { right:20px; }
 .btn-scroll-top { right:80px; display:none; }
+
+

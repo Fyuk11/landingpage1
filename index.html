@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RodriGOmez — Landing Pages Profesionales</title>
-  <meta name="description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión. Hablemos y llevá tu negocio online al siguiente nivel." />
+  <title>RodriGOmez — Landing Pages que convierten</title>
+  <meta name="description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión. Aumenta tus clientes y crecé online con tu web optimizada." />
   <meta name="theme-color" content="#0b0d10" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://rodrigomezlanding.netlify.app/" />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="RodriGOmez — Landing Pages Profesionales" />
-  <meta property="og:description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión." />
+  <meta property="og:title" content="RodriGOmez — Landing Pages que convierten" />
+  <meta property="og:description" content="Landing pages rápidas, modernas y pensadas para vender más." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rodrigomezlanding.netlify.app/" />
   <meta property="og:image" content="assets/img/og-image.jpg" />
@@ -25,14 +25,14 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
 
-  <!-- JSON-LD (negocio/portafolio) -->
+  <!-- JSON-LD (corregido) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rodrigo Gomez",
-    "jobTitle": "Web Designer",
+    "@type": "Organization",
+    "name": "RodriGOmez",
     "url": "https://rodrigomezlanding.netlify.app/",
+    "logo": "https://rodrigomezlanding.netlify.app/assets/img/logo.png",
     "sameAs": [
       "https://www.instagram.com/tuusuario",
       "https://www.linkedin.com/in/tuusuario"
@@ -41,41 +41,44 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+
 
   <!-- ================= HEADER ================= -->
-<!-- ================= HEADER ================= -->
-<header class="header" role="banner">
-  <div class="container nav-container">
-    <a href="#hero" class="logo" aria-label="Ir al inicio">RodriGOmez</a>
+  <header class="header" role="banner">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" aria-label="Ir al inicio">RodriGOmez</a>
 
-    <!-- Burger -->
-    <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
-      <div></div>
-    </button>
+      <!-- Burger -->
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+        <div></div>
+      </button>
 
-    <!-- Nav -->
-    <nav id="site-nav" class="nav" role="navigation">
-      <ul class="nav__links">
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
+      <!-- Nav -->
+      <nav id="site-nav" class="nav" role="navigation">
+        <ul class="nav__links">
+          <li><a href="#benefits">Beneficios</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <div class="nav__overlay"></div>
-  </div>
-</header>
+      <div class="nav__overlay"></div>
+    </div>
+  </header>
 
   <main id="main">
     <!-- ================= HERO ================= -->
     <section id="hero" class="section hero" aria-label="Hero">
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="container hero__content">
-        <h1>Construimos experiencias digitales</h1>
-        <p>Landing pages modernas, rápidas y pensadas para convertir.</p>
-        <a href="#contact" class="btn btn--primary">Hablemos</a>
+        <h1>Landing pages que convierten</h1>
+        <p>Diseño moderno y optimizado para hacer crecer tu negocio online.</p>
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--primary">Quiero mi landing</a>
+          <a href="#projects" class="btn btn--secondary">Ver proyectos</a>
+        </div>
       </div>
     </section>
 
@@ -86,11 +89,27 @@
       </svg>
     </div>
 
-    <!-- ================= ABOUT ================= -->
-    <section id="about" class="section about">
+    <!-- ================= BENEFITS ================= -->
+    <section id="benefits" class="section benefits">
       <div class="container">
-        <h2>Sobre mí</h2>
-        <p>Un texto breve sobre tu misión, visión o lo que quieras transmitir.</p>
+        <h2>¿Por qué elegirme?</h2>
+        <div class="benefits__grid">
+          <article>
+            <img src="assets/icons/rocket.svg" alt="" aria-hidden="true" />
+            <h3>Velocidad</h3>
+            <p>Landing pages rápidas que cargan en segundos.</p>
+          </article>
+          <article>
+            <img src="assets/icons/conversion.svg" alt="" aria-hidden="true" />
+            <h3>Conversión</h3>
+            <p>Diseños pensados para guiar al usuario a la acción.</p>
+          </article>
+          <article>
+            <img src="assets/icons/responsive.svg" alt="" aria-hidden="true" />
+            <h3>Responsive</h3>
+            <p>Perfectas en móvil, tablet y escritorio.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -135,16 +154,16 @@
         <h2>Proyectos</h2>
         <div class="projects__grid">
           <article class="project-card">
-            <img src="assets/img/proj-1.jpg" alt="Proyecto 1" loading="lazy" />
-            <h3>Proyecto 1</h3>
+            <img src="assets/img/proj-1.jpg" alt="Landing para e-commerce" loading="lazy" />
+            <h3>E-commerce optimizado</h3>
           </article>
           <article class="project-card">
-            <img src="assets/img/proj-2.jpg" alt="Proyecto 2" loading="lazy" />
-            <h3>Proyecto 2</h3>
+            <img src="assets/img/proj-2.jpg" alt="Landing para eventos" loading="lazy" />
+            <h3>Landing de evento</h3>
           </article>
           <article class="project-card">
-            <img src="assets/img/proj-3.jpg" alt="Proyecto 3" loading="lazy" />
-            <h3>Proyecto 3</h3>
+            <img src="assets/img/proj-3.jpg" alt="Landing corporativa" loading="lazy" />
+            <h3>Landing corporativa</h3>
           </article>
         </div>
       </div>
@@ -178,15 +197,22 @@
       </div>
     </section>
 
+    <!-- separador -->
+    <div class="separator" aria-hidden="true">
+      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path fill="#f9fafb" d="M0,64L1440,96L1440,0L0,0Z"></path>
+      </svg>
+    </div>
+
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="section contact">
       <div class="container">
         <h2>Contacto</h2>
+        <p>¿Listo para dar el siguiente paso? Contame sobre tu proyecto:</p>
         <form id="contact-form" class="contact__form" novalidate>
           <input type="text" name="name" placeholder="Tu nombre" autocomplete="name" required />
           <input type="email" name="email" placeholder="Tu email" autocomplete="email" required />
           <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-          <label class="sr-only" for="privacy">Acepto la política de privacidad</label>
           <div class="form__row">
             <input id="privacy" type="checkbox" required /> Acepto la política de privacidad
           </div>
@@ -202,6 +228,7 @@
     <div class="container footer__content">
       <a href="#hero" class="logo">RodriGOmez</a>
       <ul class="footer__menu">
+        <li><a href="#benefits">Beneficios</a></li>
         <li><a href="#services">Servicios</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#faq">FAQ</a></li>

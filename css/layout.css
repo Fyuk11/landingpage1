@@ -152,3 +152,93 @@
 .btn-scroll-top { right:80px; display:none; }
 
 
+/* ===== LAYOUT BASE: Mobile first y escalable ===== */
+
+/* Contenedor reutilizable */
+.container {
+  width: 100%;
+  max-width: 100%;        /* mobile ocupa todo */
+  padding: 0 1.5rem;      /* aire lateral */
+  margin: 0 auto;
+}
+
+/* A partir de tablet */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 2rem;
+  }
+}
+
+/* A partir de desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    padding: 0 3rem;
+  }
+}
+
+/* Asegura aire vertical entre secciones */
+section {
+  padding: 4rem 0;
+}
+
+/* Titulares */
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+/* ===== BENEFITS SECTION ===== */
+.benefits {
+  background: linear-gradient(180deg, #f9fbff 0%, #fffaf6 100%);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+
+/* Cada tarjeta de beneficio */
+.benefit {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.benefit h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color, #0057d9); /* azul base */
+}
+
+.benefit p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hover efecto */
+.benefit:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Grid responsive */
+@media (min-width: 768px) {
+  .benefits__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}

@@ -33,3 +33,24 @@ document.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+
+
+/* document.addEventListener("DOMContentLoaded", () => { */
+  const faders = document.querySelectorAll(".fade-in");
+
+  const options = {
+    threshold: 0.2, // se activa cuando 20% es visible
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, options);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+;

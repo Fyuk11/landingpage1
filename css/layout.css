@@ -148,8 +148,55 @@ header {
   }
 }
 
+/* ===== Reveal (mobile-first) ===== */
+/* Estado base: solo oculto, sin transform genérico */
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
 
+/* Estado inicial por variante */
+[data-reveal="up"]    { transform: translateY(24px); }
+[data-reveal="left"]  { transform: translateX(-24px); }
+[data-reveal="right"] { transform: translateX(24px); }
+[data-reveal="scale"] { transform: scale(.96); }
 
+/* Activación (clases que agrega reveal.js) */
+.reveal-up    { animation: fadeUp .8s ease forwards; }
+.reveal-left  { animation: fadeLeft .8s ease forwards; }
+.reveal-right { animation: fadeRight .8s ease forwards; }
+.reveal-scale { animation: scaleIn .6s ease forwards; }
+
+/* Keyframes con from/to consistentes */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Accesibilidad: sin animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
 
 
 

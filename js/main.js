@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Inicializaciones de módulos
   if (typeof initNav === "function") initNav();
+    if (typeof initReveal === "function") initReveal();
   if (typeof initScroll === "function") initScroll();
   if (typeof initFAQ === "function") initFAQ();
   if (typeof initForm === "function") initForm();

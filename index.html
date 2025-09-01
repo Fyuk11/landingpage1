@@ -77,44 +77,6 @@
     </div>
   </header>
 
-    <!-- ============ HERO ============ --
-  <main id="hero" class="pad">
-    <div class="container hero">
-      <div>
-        <h1>Landing pages que <span style="color:var(--accent)">convierten</span></h1>
-        <p>Diseño moderno y optimizado para hacer crecer tu negocio online. Código limpio, SEO básico y performance real.</p>
-        <div class="cta-row">
-          <a class="btn btn--primary" id="heroCta" href="#contacto">Hablemos</a>
-          <a class="btn btn--accent" href="#proyectos">Ver proyectos</a>
-        </div>
-      </div>
-      <div class="grid" style="align-self:start">
-        <div class="heroCard" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
-          <div>
-            <h3>Velocidad</h3>
-            <p>Landing pages rápidas que cargan en segundos.</p>
-          </div>
-        </div>
-        <div class="heroCard" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v6h6"/><path d="M21 21v-6h-6"/><path d="M3 21h6v-6H3v6Zm12-12h6V3h-6v6Z"/></svg>
-          <div>
-            <h3>Conversión</h3>
-            <p>Diseños pensados para guiar al usuario a la acción.</p>
-          </div>
-        </div>
-        <div class="heroCard" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16M2 12h20"/></svg>
-          <div>
-            <h3>Responsive</h3>
-            <p>Perfectas en móvil, tablet y escritorio.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main> 
--->
-
 <!-- ============ HERO ============ -->
 <main id="hero" class="pad hero-section">
   <!-- Video de fondo -->
@@ -170,28 +132,55 @@
 
 
   <!-- ============ SERVICIOS ============ -->
-  <section id="servicios" class="pad">
-    <div class="container">
-      <div class="section-title">
-        <h2>Servicios</h2>
-        <p class="section-desc">Soluciones enfocadas en resultados.</p>
-      </div>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(260px,1fr))">
-        <article class="service" data-reveal>
-          <h3>Landing Pages</h3>
-          <p>Diseños rápidos, modernos y optimizados.</p>
-        </article>
-        <article class="service" data-reveal>
-          <h3>Plantillas</h3>
-          <p>Para WordPress, Shopify y sitios estáticos.</p>
-        </article>
-        <article class="service" data-reveal>
-          <h3>Asesoría</h3>
-          <p>Te acompaño en la estrategia digital.</p>
-        </article>
-      </div>
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="pad">
+  <div class="container">
+    <div class="section-title" data-reveal="up">
+      <h2>Nuestros Servicios</h2>
+      <p class="section-desc">Diseñamos experiencias digitales que conectan marcas con personas.</p>
     </div>
-  </section>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem;">
+      <article class="service" data-reveal="right">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/></svg>
+        </div>
+        <h3>Landing Pages</h3>
+        <p>Sitios de alto impacto visual y optimizados para convertir visitantes en clientes.</p>
+      </article>
+
+      <article class="service" data-reveal="left">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Plantillas</h3>
+        <p>Pack de diseños listos para WordPress, Shopify y sitios estáticos. Fáciles de usar y personalizar.</p>
+      </article>
+
+      <article class="service" data-reveal="up">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>
+        </div>
+        <h3>Asesoría</h3>
+        <p>Consultoría en estrategia digital: desde tu primera web hasta tu tienda online completa.</p>
+      </article>
+
+      <article class="service" data-reveal="scale">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </div>
+        <h3>Optimización</h3>
+        <p>Mejoramos rendimiento, SEO y velocidad de carga para que tu sitio vuele.</p>
+      </article>
+    </div>
+
+    <div class="section-cta" data-reveal="up">
+      <a href="#contacto" class="btn">Quiero más info</a>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- ============ PROYECTOS ============ -->
   <section id="proyectos" class="pad">
@@ -230,7 +219,37 @@
         </article>
       </div>
     </div>
+    
   </section>
+
+
+<!-- CTA - descripcion -->
+<!-- ============ CTA SECTION ============ -->
+<section id="cta" class="cta-section">
+<!-- Video de fondo -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <!-- versión escritorio -->
+    <source src="/assets/video/hero-optimized.webm" type="video/webm">
+    <source src="/assets/video/hero-optimized.mp4" type="video/mp4">
+    <source src="/assets/video/hero.mp4" type="video/mp4">
+    <!-- fallback imagen -->
+    <img src="/assets/img/hero-fallback.jpg" alt="Fondo de hero">
+  </video>
+
+  <!-- Overlay -->
+  <div class="cta-overlay"></div>
+
+  <!-- Contenido -->
+  <div class="container cta-content" data-reveal>
+    <h2 class="cta-title">Impulsá tu proyecto digital</h2>
+    <p class="cta-desc">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <a href="#contacto" class="btn btn-primary">Quiero mi sitio</a>
+  </div>
+</section>
+
 
   <!-- ============ FAQ ============ -->
   <section id="faq" class="pad">
@@ -335,6 +354,7 @@
 <!-- JS -->
   <script src="js/nav.js" defer></script>
   <script src="js/faq.js" defer></script>
+  <script src="js/reveal.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/form.js" defer></script>
   <script src="js/whatsapp.js" defer></script>

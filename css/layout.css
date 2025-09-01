@@ -1,244 +1,175 @@
-/* HEADER */
-/* .header { position: sticky; top: 0; width: 100%; background: var(--color-light); box-shadow: var(--shadow-soft); z-index: 1000; } */
-/* HEADER */
-.header {
+/* ============ HEADER / NAV ============ */
+header {
   position: sticky;
   top: 0;
-  width: 100%;
-  background: var(--color-light); /* ← inicial sólido */
-  box-shadow: var(--shadow-soft);
-  z-index: 1000;
-  transition: background .3s ease, backdrop-filter .3s ease;
-}
-/* HEADER al hacer scroll */
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.75); /* semi transparente */
-  backdrop-filter: blur(10px);           /* blur elegante */
-  box-shadow: var(--shadow-soft);
+  z-index: 50;
+  backdrop-filter: saturate(1.1) blur(8px);
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 11, 12, 0.65);
 }
 
-
-.nav-container { display:flex; justify-content:space-between; align-items:center; height:70px; }
-.logo { font-size:1.5rem; font-weight:800; }
-
-/* NAV */
-/* NAV */
 .nav {
-  position: fixed;
-  top: 0;
-  right: -70%;   /* menú escondido a la derecha */
-  width: 70%;    /* ancho del menú */
-  height: 100vh;
-  background: var(--color-light);
-  transition: right .3s ease;
-  padding-top: 80px;
-  box-shadow: var(--shadow-soft);
-  z-index: 1000;
-}
-.nav.active {
-  right: 0;  /* aparece desde la derecha */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
 }
 
-/* Overlay */
-.nav__overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
-  z-index: 900;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
 }
-.nav.active ~ .nav__overlay {
+
+.logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+.links {
+  display: none;
+  gap: 20px;
+}
+
+.links a {
+  opacity: 0.86;
+}
+
+.links a:hover {
   opacity: 1;
-  pointer-events: auto;
 }
 
-
-.nav__links { display:flex; flex-direction:column; gap:1.5rem; padding:0 1.5rem; }
-.nav__links a { font-weight:600; position:relative; }
-.nav__links a::after { content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--color-accent); transition:width .3s ease; }
-.nav__links a:hover::after { width:100%; }
-
-.nav__burger { display:block; width:30px; height:22px; position:relative; z-index:1100; }
-.nav__burger::before, .nav__burger::after, .nav__burger div { content:""; background:var(--color-dark); position:absolute; height:3px; width:100%; border-radius:2px; transition: transform .3s, top .3s, bottom .3s, opacity .3s; }
-.nav__burger::before { top:0; }
-.nav__burger::after { bottom:0; }
-.nav__burger div { top:50%; transform: translateY(-50%); }
-.nav__burger.active::before { transform: rotate(45deg); top:50%; }
-.nav__burger.active::after { transform: rotate(-45deg); bottom:50%; }
-.nav__burger.active div { opacity:0; }
-
-
-@media (min-width: 768px) {
-  .nav {
-    position: static;
-    width: auto;
-    height: auto;
-    padding-top: 0;
-    box-shadow: none;
-    background: transparent; /* para desktop */
-  }
-
-  .nav__links {
-    flex-direction: row;
-    justify-content: flex-end; /* 👈 alinea los links a la derecha */
-    gap: 2rem;
-  }
-
-  .nav__burger { display: none; }
-  .nav__overlay { display: none; } /* overlay solo en mobile */
-}
-@media (min-width: 768px) {
-  .nav {
-    position: static;
-    width: auto;
-    height: auto;
-    padding-top: 0;
-    box-shadow: none;
-    background: transparent; /* limpio */
-  }
+.cta {
+  display: none;
 }
 
-
-
-
-/* HERO con imagen de fondo + overlay, mantiene “esencia” */
-.hero { min-height: 92vh; display:flex; align-items:center; justify-content:center; text-align:center; color: var(--color-light); position:relative; overflow:hidden; background: var(--color-dark); }
-.hero::before { /* capa de imagen de fondo */
-  content:""; position:absolute; inset:0; z-index:-2;
-  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat fixed; /* ← tu imagen base */
-  filter: saturate(.9) contrast(1.05);
-}
-.hero__overlay { /* capa de degradado para contraste */
-  position:absolute; inset:0; z-index:-1;
-  background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.55) 100%);
-}
-.hero__content { max-width: 720px; padding: 0 1rem; }
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 1rem; }
-.hero p { font-size: clamp(1.05rem, 2.5vw, 1.25rem); margin-bottom: 2rem; opacity: .95; }
-
-/* SERVICES */
-.services { background: var(--color-gray); }
-.services__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2rem; }
-
-/* PROJECTS */
-.projects { position: relative; }
-.projects__grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:2rem; }
-.projects__grid::before {
-  content:""; position:absolute; top:-80px; left:0; width:100%; height:999px; background:url('../assets/img/splash.png') no-repeat center/contain; opacity:.35; z-index:-1; pointer-events:none;
+/* ============ BURGER ============ */
+.burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0f1012;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-/* FAQ */
-.faq { position:relative; z-index:1; overflow:visible; }
-.faq .faq-splash { position:absolute; top:-150px; left:0; width:100%; height:400px; z-index:-1; opacity:.35; object-fit:contain; }
-@media (max-width:768px){ .faq .faq-splash { height:300px; top:-100px; } }
-
-/* CONTACT */
-.contact__form { max-width: 600px; margin: 0 auto; }
-
-/* FOOTER */
-.footer { background: var(--color-dark); color: var(--color-light); padding: 2rem 0; text-align:center; }
-.footer__content { display:flex; flex-direction:column; align-items:center; gap:1.25rem; }
-.footer__menu { display:flex; gap:1.25rem; flex-wrap:wrap; }
-.footer__menu a { color: var(--color-light); }
-.footer__menu a:hover { color: var(--color-accent); }
-.footer__copy { font-size:.95rem; opacity:.85; }
-
-/* Flotantes */
-.btn-whatsapp, .btn-scroll-top { position:fixed; bottom:20px; z-index:999; width:50px; height:50px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-strong); transition:var(--transition); }
-.btn-whatsapp:hover, .btn-scroll-top:hover { transform: translateY(-3px); }
-.btn-whatsapp { right:20px; }
-.btn-scroll-top { right:80px; display:none; }
-
-
-/* ===== LAYOUT BASE: Mobile first y escalable ===== */
-
-/* Contenedor reutilizable */
-.container {
-  width: 100%;
-  max-width: 100%;        /* mobile ocupa todo */
-  padding: 0 1.5rem;      /* aire lateral */
-  margin: 0 auto;
+.burger svg {
+  display: block;
+  width: 22px;
+  height: 22px;
 }
 
-/* A partir de tablet */
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-    padding: 0 2rem;
-  }
+.burger:hover,
+.burger.active {
+  box-shadow: 0 0 12px 2px rgba(255, 215, 0, 0.6); /* glow dorado */
+  border-color: gold;
 }
 
-/* A partir de desktop */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-    padding: 0 3rem;
-  }
+/* Animación burger → X */
+.burger svg line {
+  transition: all 0.3s ease;
 }
 
-/* Asegura aire vertical entre secciones */
-section {
-  padding: 4rem 0;
+.burger.active svg line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
 }
 
-/* Titulares */
-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+.burger.active svg line:nth-child(2) {
+  opacity: 0;
 }
 
-
-/* ===== BENEFITS SECTION ===== */
-.benefits {
-  background: linear-gradient(180deg, #f9fbff 0%, #fffaf6 100%);
+.burger.active svg line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
-.benefits__grid {
+/* ============ MOBILE MENU ============ */
+.mobile {
+  position: fixed;
+  inset: 64px 0 auto 0;
+  background: rgba(11, 11, 12, 0.98);
+  border-top: 1px solid var(--line);
+  display: none;
+}
+
+.mobile.open {
+  display: block;
+}
+
+.mobile .menu {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  text-align: center;
+  padding: 12px;
+  gap: 6px;
 }
 
-/* Cada tarjeta de beneficio */
-.benefit {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.mobile a {
+  padding: 12px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
 }
 
-.benefit img {
-  width: 60px;
-  height: auto;
-  margin-bottom: 1rem;
+.mobile a:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
 }
 
-.benefit h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: var(--primary-color, #0057d9); /* azul base */
+.mobile a:hover {
+  border-color: var(--line);
+  background: #0f1012;
 }
 
-.benefit p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
+/* Menú mobile cerrado */
+#mobileMenu {
+  display: none;
+  transition: all 0.3s ease;
 }
 
-/* Hover efecto */
-.benefit:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+/* Abierto */
+#mobileMenu.active {
+  display: block;
 }
 
-/* Grid responsive */
-@media (min-width: 768px) {
-  .benefits__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+/* ============ DESKTOP NAV ============ */
+@media (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+  .links {
+    display: flex;
+  }
+  .cta {
+    display: inline-flex;
   }
 }
+
+
+
+
+
+
+
+    /* ============ SECTIONS ============ */
+    section{ scroll-margin-top: 80px }
+    .section-title{ display:flex; align-items:center; justify-content:space-between; margin-bottom: 18px }
+    .section-title h2{ letter-spacing:.3px }
+    .section-desc{ color: var(--muted) }
+
+      /* FOOTER */
+    footer{ border-top:1px solid var(--line); margin-top: 40px; padding: 26px 0 40px; background: linear-gradient(180deg, transparent, rgba(255,255,255,.02)) }
+    .foot{ display:grid; gap:16px; align-items:center; justify-content:space-between }
+    .foot .menu{ display:flex; gap: 14px; flex-wrap:wrap; opacity:.9 }
+    .social{ display:flex; gap: 10px }
+    .social a{ width:36px; height:36px; display:grid; place-items:center; border:1px solid var(--line); border-radius: 12px; background:#0f1012 }
+
+    @media (min-width: 900px){ .foot{ grid-template-columns: 1fr auto auto } }
+
+
+
+
+

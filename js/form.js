@@ -1,27 +1,32 @@
-/* ===============================
-   Contact Form Validation
-   =============================== */
-
+/* =========================
+   Formulario de contacto
+   ========================= */
 function initForm() {
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  if(!form) return;
+  const form = document.querySelector("form");
 
-  form.addEventListener('submit', async (e) => {
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    status.textContent = '';
 
-    const data = Object.fromEntries(new FormData(form));
-    if(!data.name || !data.email || !data.message){
-      status.textContent = 'Completá todos los campos.';
+    const name = form.querySelector("input[name='name']").value.trim();
+    const email = form.querySelector("input[name='email']").value.trim();
+    const message = form.querySelector("textarea[name='message']").value.trim();
+
+    // Validaciones simples
+    if (!name || !email || !message) {
+      alert("Por favor, completa todos los campos.");
       return;
     }
 
-    // TODO: integra tu endpoint (Web3Forms, Netlify Forms, Formspree…)
-    // Ejemplo de éxito simulado:
-    await new Promise(r => setTimeout(r, 600));
-    form.reset();
-    status.textContent = '¡Mensaje enviado! Te responderé a la brevedad.';
-  });
-};
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Ingresa un email válido.");
+      return;
+    }
 
+    // Aquí podrías usar fetch() hacia backend o servicio externo
+    console.log("Formulario enviado ✅", { name, email, message });
+    alert("¡Gracias por tu mensaje!");
+    form.reset();
+  });
+}

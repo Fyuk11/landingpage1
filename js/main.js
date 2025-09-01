@@ -1,26 +1,21 @@
-/* ===============================
-   Main Initialization
-   =============================== */
+/* =========================
+   Configuración global
+   ========================= */
+const CONFIG = {
+  phoneNumber: "5491122334455", // <-- cámbialo por tu número real
+  ctaMode: "whatsapp", // opciones: "whatsapp" | "form"
+};
 
-// Espera a que el DOM cargue
+/* =========================
+   Inicialización
+   ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🚀 Sitio cargado correctamente");
+  console.log("Landing inicializada ✅");
 
-  // Inicializar módulos
-  if (typeof initNavigation === "function") initNavigation();
-  if (typeof initFAQ === "function") initFAQ();
+  // Inicializaciones de módulos
+  if (typeof initNav === "function") initNav();
   if (typeof initScroll === "function") initScroll();
-  if (typeof initWhatsApp === "function") initWhatsApp();
+  if (typeof initFAQ === "function") initFAQ();
   if (typeof initForm === "function") initForm();
+  if (typeof initWhatsapp === "function") initWhatsapp();
 });
-
-  // año dinámico en footer
-  const yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // siempre cargar en el hero al refrescar
-  if(location.hash){
-    const hero = document.getElementById('hero');
-    if(hero) hero.scrollIntoView({ behavior: 'instant', block: 'start' });
-    history.replaceState(null, '', location.pathname + location.search);
-  };

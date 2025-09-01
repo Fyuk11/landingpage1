@@ -1,22 +1,32 @@
-<!DOCTYPE html>
+
+
+
+
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RodriGOmez — Landing Pages que convierten</title>
-  <meta name="description" content="Diseño de landing pages modernas, rápidas y enfocadas en conversión. Aumenta tus clientes y crecé online con tu web optimizada." />
-  <meta name="theme-color" content="#0b0d10" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Landing pages que convierten | Rodrigo Gómez</title>
+<meta name="description" content="Landing pages rápidas, modernas y optimizadas para convertir. Diseño, maquetado, SEO básico y deploy profesional." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#0b0b0c" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://rodrigomezlanding.netlify.app/" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="RodriGOmez — Landing Pages que convierten" />
-  <meta property="og:description" content="Landing pages rápidas, modernas y pensadas para vender más." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rodrigomezlanding.netlify.app/" />
-  <meta property="og:image" content="assets/img/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Landing pages que convierten" />
+<meta property="og:description" content="Landing pages rápidas, modernas y optimizadas para convertir." />
+<meta property="og:url" content="https://tu-dominio.com/" />
+<meta property="og:image" content="/og-image.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
 
   <!-- CSS -->
   <link rel="icon" href="favicon.ico" />
@@ -25,260 +35,310 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
 
-  <!-- JSON-LD (corregido) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "RodriGOmez",
-    "url": "https://rodrigomezlanding.netlify.app/",
-    "logo": "https://rodrigomezlanding.netlify.app/assets/img/logo.png",
-    "sameAs": [
-      "https://www.instagram.com/tuusuario",
-      "https://www.linkedin.com/in/tuusuario"
-    ]
-  }
-  </script>
 </head>
+
+
 <body>
+<!-- ============ HEADER ============ -->
+  <header>
+    <div class="container nav">
+      <a href="#hero" class="logo" aria-label="Inicio">
+        <!-- Simple RG SVG logo -->
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#14161a"/><path d="M7 22V10h7.2c2.2 0 3.8 1.4 3.8 3.4 0 1.6-1 2.8-2.6 3.3l3.6 5.4h-3.1l-3.2-4.9H10v4.9H7Zm3-7.6h4c1 0 1.8-.6 1.8-1.6s-.8-1.6-1.8-1.6h-4v3.2Zm13.8 7.6V10h3v12h-3Z" fill="currentColor"/></svg>
+        <span>RodriGOmez</span>
+      </a>
 
-
-  <!-- ================= HEADER ================= -->
-  <header class="header" role="banner">
-    <div class="container nav-container">
-      <a href="#hero" class="logo" aria-label="Ir al inicio">RodriGOmez</a>
-
-      <!-- Burger -->
-      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
-        <div></div>
-      </button>
-
-      <!-- Nav -->
-      <nav id="site-nav" class="nav" role="navigation">
-        <ul class="nav__links">
-          <li><a href="#benefits">Beneficios</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
+      <nav class="links" aria-label="Principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
       </nav>
 
-      <div class="nav__overlay"></div>
+      <div class="cta">
+        <a class="btn btn--primary" id="navCta" href="#contacto">Hablemos</a>
+      </div>
+
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile" role="dialog" aria-modal="true" aria-label="Menú">
+      <div class="menu container">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn--primary" id="mobileCta" href="#contacto">Hablemos</a>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- ================= HERO ================= -->
-    <section id="hero" class="section hero" aria-label="Hero">
-      <div class="hero__overlay" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <h1>Landing pages que convierten</h1>
-        <p>Diseño moderno y optimizado para hacer crecer tu negocio online.</p>
-        <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">Quiero mi landing</a>
-          <a href="#projects" class="btn btn--secondary">Ver proyectos</a>
+    <!-- ============ HERO ============ --
+  <main id="hero" class="pad">
+    <div class="container hero">
+      <div>
+        <h1>Landing pages que <span style="color:var(--accent)">convierten</span></h1>
+        <p>Diseño moderno y optimizado para hacer crecer tu negocio online. Código limpio, SEO básico y performance real.</p>
+        <div class="cta-row">
+          <a class="btn btn--primary" id="heroCta" href="#contacto">Hablemos</a>
+          <a class="btn btn--accent" href="#proyectos">Ver proyectos</a>
         </div>
       </div>
-    </section>
-
-    <!-- separador -->
-    <div class="separator" aria-hidden="true">
-      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path fill="#fff" d="M0,96L1440,48L1440,0L0,0Z"></path>
-      </svg>
-    </div>
-
-    <!-- ================= BENEFITS ================= -->
-   <!---- <section id="benefits" class="section benefits">
-      <div class="container">
-        <h2>¿Por qué elegirme?</h2>
-        <div class="benefits__grid">
-          <article>
-            <img src="assets/icons/rocket.svg" alt="" aria-hidden="true" />
+      <div class="grid" style="align-self:start">
+        <div class="heroCard" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+          <div>
             <h3>Velocidad</h3>
             <p>Landing pages rápidas que cargan en segundos.</p>
-          </article>
-          <article>
-            <img src="assets/icons/conversion.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+        <div class="heroCard" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v6h6"/><path d="M21 21v-6h-6"/><path d="M3 21h6v-6H3v6Zm12-12h6V3h-6v6Z"/></svg>
+          <div>
             <h3>Conversión</h3>
             <p>Diseños pensados para guiar al usuario a la acción.</p>
-          </article>
-          <article>
-            <img src="assets/icons/responsive.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+        <div class="heroCard" data-reveal>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16M2 12h20"/></svg>
+          <div>
             <h3>Responsive</h3>
             <p>Perfectas en móvil, tablet y escritorio.</p>
-          </article>
+          </div>
         </div>
       </div>
-    </section>
-  -->
-<!-- ================= BENEFITS ================= -->
-<section id="benefits" class="section benefits">
-  <div class="container">
-    <h2 class="section__title">¿Por qué elegirme?</h2>
-    <div class="benefits__grid">
-      <article class="benefit fade-in">
-        <img src="assets/icons/rocket.svg" alt="" aria-hidden="true" />
-        <h3>Velocidad</h3>
-        <p>Landing pages rápidas que cargan en segundos.</p>
-      </article>
-      <article class="benefit fade-in">
-        <img src="assets/icons/conversion.svg" alt="" aria-hidden="true" />
-        <h3>Conversión</h3>
-        <p>Diseños pensados para guiar al usuario a la acción.</p>
-      </article>
-      <article class="benefit fade-in">
-        <img src="assets/icons/responsive.svg" alt="" aria-hidden="true" />
-        <h3>Responsive</h3>
-        <p>Perfectas en móvil, tablet y escritorio.</p>
-      </article>
+    </div>
+  </main> 
+-->
+
+<!-- ============ HERO ============ -->
+<main id="hero" class="pad hero-section">
+  <!-- Video de fondo -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <!-- versión escritorio -->
+    <source src="/assets/video/hero-optimized.webm" type="video/webm">
+    <source src="/assets/video/hero-optimized.mp4" type="video/mp4">
+    <source src="/assets/video/hero.mp4" type="video/mp4">
+    <!-- fallback imagen -->
+    <img src="/assets/img/hero-fallback.jpg" alt="Fondo de hero">
+  </video>
+
+  <!-- Contenido encima -->
+  <div class="container hero">
+    <div class="hero-content">
+      <h1>Landing pages que <span style="color:var(--accent)">convierten</span></h1>
+      <p>Diseño moderno y optimizado para hacer crecer tu negocio online. Código limpio, SEO básico y performance real.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" id="heroCta" href="#contacto">Hablemos</a>
+        <a class="btn btn--accent" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid" style="align-self:start">
+      <div class="heroCard" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
+        <div>
+          <h3>Velocidad</h3>
+          <p>Landing pages rápidas que cargan en segundos.</p>
+        </div>
+      </div>
+      <div class="heroCard" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v6h6"/><path d="M21 21v-6h-6"/><path d="M3 21h6v-6H3v6Zm12-12h6V3h-6v6Z"/></svg>
+        <div>
+          <h3>Conversión</h3>
+          <p>Diseños pensados para guiar al usuario a la acción.</p>
+        </div>
+      </div>
+      <div class="heroCard" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 4v16M2 12h20"/></svg>
+        <div>
+          <h3>Responsive</h3>
+          <p>Perfectas en móvil, tablet y escritorio.</p>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</main>
 
 
 
 
-    <!-- separador -->
-    <div class="separator" aria-hidden="true">
-      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path fill="#f9fafb" d="M0,32L1440,128L1440,0L0,0Z"></path>
-      </svg>
-    </div>
 
-    <!-- ================= SERVICES ================= -->
-    <section id="services" class="section services">
-      <div class="container">
+  <!-- ============ SERVICIOS ============ -->
+  <section id="servicios" class="pad">
+    <div class="container">
+      <div class="section-title">
         <h2>Servicios</h2>
-        <div class="services__grid">
-          <article class="service-card">
-            <h3>Landing Pages</h3>
-            <p>Diseños rápidos, modernos y optimizados.</p>
-          </article>
-          <article class="service-card">
-            <h3>Plantillas</h3>
-            <p>Para WordPress, Shopify y sitios estáticos.</p>
-          </article>
-          <article class="service-card">
-            <h3>Asesoría</h3>
-            <p>Te acompaño en la estrategia digital.</p>
-          </article>
-        </div>
+        <p class="section-desc">Soluciones enfocadas en resultados.</p>
       </div>
-    </section>
-
-    <!-- separador -->
-    <div class="separator" aria-hidden="true">
-      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path fill="#fff" d="M0,128L1440,32L1440,0L0,0Z"></path>
-      </svg>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(260px,1fr))">
+        <article class="service" data-reveal>
+          <h3>Landing Pages</h3>
+          <p>Diseños rápidos, modernos y optimizados.</p>
+        </article>
+        <article class="service" data-reveal>
+          <h3>Plantillas</h3>
+          <p>Para WordPress, Shopify y sitios estáticos.</p>
+        </article>
+        <article class="service" data-reveal>
+          <h3>Asesoría</h3>
+          <p>Te acompaño en la estrategia digital.</p>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="section projects">
-      <div class="container">
+  <!-- ============ PROYECTOS ============ -->
+  <section id="proyectos" class="pad">
+    <div class="container">
+      <div class="section-title">
         <h2>Proyectos</h2>
-        <div class="projects__grid">
-          <article class="project-card">
-            <img src="assets/img/proj-1.jpg" alt="Landing para e-commerce" loading="lazy" />
+        <p class="section-desc">Algunos ejemplos recientes.</p>
+      </div>
+      <div class="grid projects">
+        <!-- Card 1 -->
+        <article class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1523271152747-4a1121188589?q=80&w=1400&auto=format&fit=crop" alt="Landing para e-commerce" loading="lazy" width="1200" height="720" />
+          <div class="meta">
+            <span class="tag">E-commerce</span>
             <h3>E-commerce optimizado</h3>
-          </article>
-          <article class="project-card">
-            <img src="assets/img/proj-2.jpg" alt="Landing para eventos" loading="lazy" />
+            <p>Arquitectura de conversión y velocidad.</p>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1541560052-77ec1bbc09f7?q=80&w=1400&auto=format&fit=crop" alt="Landing de evento" loading="lazy" width="1200" height="720" />
+          <div class="meta">
+            <span class="tag">Evento</span>
             <h3>Landing de evento</h3>
-          </article>
-          <article class="project-card">
-            <img src="assets/img/proj-3.jpg" alt="Landing corporativa" loading="lazy" />
+            <p>Información clara y CTA directa.</p>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?q=80&w=1400&auto=format&fit=crop" alt="Landing corporativa" loading="lazy" width="1200" height="720" />
+          <div class="meta">
+            <span class="tag">Corporativa</span>
             <h3>Landing corporativa</h3>
-          </article>
-        </div>
+            <p>Marca sólida y comunicación profesional.</p>
+          </div>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================= FAQ ================= -->
-    <section id="faq" class="section faq">
-      <img class="faq-splash" src="assets/img/splash.png" alt="" aria-hidden="true" />
-      <div class="container">
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="pad">
+    <div class="container">
+      <div class="section-title">
         <h2>Preguntas frecuentes</h2>
-        <div class="faq__list" id="faq-list">
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">¿Tiempo de entrega?</button>
-            <div class="faq__answer" hidden>
-              <p>Según el alcance, entre 7 y 15 días hábiles.</p>
-            </div>
+      </div>
+
+      <details class="faq" data-reveal>
+        <summary>¿Tiempo de entrega?</summary>
+        <div class="faq-body">Según el alcance, entre 7 y 15 días hábiles.</div>
+      </details>
+
+      <details class="faq" data-reveal>
+        <summary>¿Qué incluye?</summary>
+        <div class="faq-body">Diseño, maquetado, SEO básico, optimización y deploy.</div>
+      </details>
+
+      <details class="faq" data-reveal>
+        <summary>¿Cómo empezamos?</summary>
+        <div class="faq-body">Agendamos una llamada y definimos objetivos y estilo.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto" class="pad">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <p class="section-desc">¿Listo para dar el siguiente paso? Contame sobre tu proyecto.</p>
+      </div>
+
+      <!-- Para usar Netlify Forms -->
+      <form id="contactForm" name="contacto" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contacto" />
+        <div class="grid" style="grid-template-columns:1fr; gap:12px">
+          <div class="fld">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">¿Qué incluye?</button>
-            <div class="faq__answer" hidden>
-              <p>Diseño, maquetado, SEO básico, optimización y deploy.</p>
-            </div>
+          <div class="fld">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="tu@email.com" required />
           </div>
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">¿Cómo empezamos?</button>
-            <div class="faq__answer" hidden>
-              <p>Agendamos una llamada y definimos objetivos y estilo.</p>
-            </div>
+          <div class="fld">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Contame sobre tu proyecto" required></textarea>
+          </div>
+          <div class="form-foot">
+            <label style="display:flex; gap:8px; align-items:center">
+              <input id="privacy" type="checkbox" required />
+              <span>Acepto la política de privacidad</span>
+            </label>
+            <button type="submit" class="btn btn--primary">Enviar</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- separador -->
-    <div class="separator" aria-hidden="true">
-      <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path fill="#f9fafb" d="M0,64L1440,96L1440,0L0,0Z"></path>
-      </svg>
+        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+      </form>
     </div>
+  </section>
 
-    <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p>¿Listo para dar el siguiente paso? Contame sobre tu proyecto:</p>
-        <form id="contact-form" class="contact__form" novalidate>
-          <input type="text" name="name" placeholder="Tu nombre" autocomplete="name" required />
-          <input type="email" name="email" placeholder="Tu email" autocomplete="email" required />
-          <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-          <div class="form__row">
-            <input id="privacy" type="checkbox" required /> Acepto la política de privacidad
-          </div>
-          <button type="submit" class="btn btn--primary">Enviar</button>
-          <p id="form-status" role="status" aria-live="polite"></p>
-        </form>
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container foot">
+      <a href="#hero" class="logo" aria-label="Inicio">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#14161a"/><path d="M7 22V10h7.2c2.2 0 3.8 1.4 3.8 3.4 0 1.6-1 2.8-2.6 3.3l3.6 5.4h-3.1l-3.2-4.9H10v4.9H7Zm3-7.6h4c1 0 1.8-.6 1.8-1.6s-.8-1.6-1.8-1.6h-4v3.2Zm13.8 7.6V10h3v12h-3Z" fill="currentColor"/></svg>
+        <span>RodriGOmez</span>
+      </a>
+      <nav class="menu" aria-label="Footer">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="social">
+        <a aria-label="Instagram" href="#" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a aria-label="LinkedIn" href="#" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a aria-label="X" href="#" rel="noopener" target="_blank">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20"/></svg>
+        </a>
       </div>
-    </section>
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__content">
-      <a href="#hero" class="logo">RodriGOmez</a>
-      <ul class="footer__menu">
-        <li><a href="#benefits">Beneficios</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-      <p class="footer__copy">© <span id="year"></span> RodriGOmez. Todos los derechos reservados.</p>
     </div>
+    <div class="container" style="margin-top:12px; color:var(--muted); font-size:.95rem">© <span id="year"></span> RodriGOmez. Todos los derechos reservados.</div>
   </footer>
 
-  <!-- BOTONES FLOTANTES -->
-  <a href="https://wa.me/XXXXXXXXXXX" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="WhatsApp">
-    <img src="assets/icons/whatsapp.svg" alt="" aria-hidden="true" />
-  </a>
-  <button class="btn-scroll-top" aria-label="Volver arriba">
-    <img src="assets/icons/arrow-up.svg" alt="" aria-hidden="true" />
-  </button>
+  <!-- ============ FLOATING BUTTONS ============ -->
+  <div class="fab" aria-label="Acciones rápidas">
+    <a id="whatsappFab" aria-label="WhatsApp" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 16.2 5.4L21 21l-3.6-1.8A9 9 0 0 0 3 12Z"/><path d="M8 10c0 3 3 6 6 6l1.2-.6c.3-.2.7 0 .8.3l.6 1.2"/></svg>
+    </a>
+    <button id="toTop" aria-label="Ir arriba">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+    </button>
+  </div>
 
-  <!-- JS -->
+<!-- JS -->
   <script src="js/nav.js" defer></script>
   <script src="js/faq.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/form.js" defer></script>
   <script src="js/whatsapp.js" defer></script>
   <script src="js/main.js" defer></script>
+
 </body>
 </html>

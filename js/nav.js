@@ -1,49 +1,52 @@
-/* ===============================
-   Navigation
-   =============================== */
-function initNavigation() {
-  const burger = document.querySelector(".nav__burger");
-  const nav = document.querySelector(".nav");
-  const links = nav?.querySelectorAll("a");
+/* =========================
+   Menú de navegación
+   ========================= */
+function initNav() {
+  const header = document.querySelector("header");
+  const navToggle = document.getElementById("burger");
+  const navMenu = document.getElementById("mobileMenu");
 
-  if (!burger || !nav) return;
+  // Sticky al hacer scroll
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("sticky", window.scrollY > 10);
+  });
 
-  function toggleMenu(force) {
-    const isActive = nav.classList.contains("active");
-
-    if (force === "open" || (!isActive && force !== "close")) {
-      nav.classList.add("active");
-      burger.classList.add("active");
-      burger.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
-    } else {
-      nav.classList.remove("active");
-      burger.classList.remove("active");
-      burger.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
-    }
+  // Función para cerrar menú
+  function closeMenu() {
+    navMenu.classList.remove("active");
+    navToggle.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
   }
 
-  burger.addEventListener("click", () => toggleMenu());
+  // Abrir / cerrar menú
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      const isActive = navMenu.classList.toggle("active");
+      navToggle.classList.toggle("active");
+      navToggle.setAttribute("aria-expanded", isActive ? "true" : "false");
+    });
 
-  links.forEach((link) => {
-    link.addEventListener("click", () => toggleMenu("close"));
-  });
+    // Cerrar al hacer clic en un enlace
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") toggleMenu("close");
-  });
+    // Cerrar al hacer clic fuera del menú
+    document.addEventListener("click", (e) => {
+      if (
+        navMenu.classList.contains("active") &&
+        !navMenu.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
+        closeMenu();
+      }
+    });
 
-  document.addEventListener("click", (e) => {
-    if (
-      nav.classList.contains("active") &&
-      !nav.contains(e.target) &&
-      !burger.contains(e.target)
-    ) {
-      toggleMenu("close");
-    }
-  });
+    // Cerrar con ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        closeMenu();
+      }
+    });
+  }
 }
-
-const overlay = document.querySelector(".nav__overlay");
-overlay?.addEventListener("click", () => toggleMenu("close"));

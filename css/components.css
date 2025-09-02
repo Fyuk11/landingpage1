@@ -42,10 +42,12 @@
   text-align: left;
   display: grid;
   gap: 2rem;
+  
 }
 
 .hero-content {
   max-width: 600px;
+  
 }
 
 /* Mobile: usar otro video si querés */
@@ -320,6 +322,14 @@
     font-size: 1.2rem;
   }
 }
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
 
 
 
@@ -354,3 +364,61 @@
     /* REVEAL ANIMATIONS */
     [data-reveal]{ opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease }
     [data-reveal].visible{ opacity: 1; transform: none }
+
+
+
+    
+/* Divider section */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, gold, silver, black);
+  animation: move 3s linear infinite;
+}
+
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; }
+}
+
+/* Divider waves */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.wave {
+  fill: #fbcb21; /* color principal de la ola */
+  opacity: 0.7;
+  animation: waveMove 10s linear infinite, waveUpDown 5s ease-in-out infinite alternate;
+}
+
+.wave2 {
+  fill: #ececec; /* segunda capa (más clara o color de fondo) */
+  opacity: 0.5;
+  animation: waveMove2 14s linear infinite, waveUpDown 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes waveMove2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+@keyframes waveUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(33px); }
+}

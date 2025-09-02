@@ -79,17 +79,13 @@
 
 <!-- ============ HERO ============ -->
 <main id="hero" class="pad hero-section">
-  <!-- Video de fondo -->
   <video class="hero-video" autoplay muted loop playsinline>
-    <!-- versión escritorio -->
     <source src="/assets/video/hero-optimized.webm" type="video/webm">
     <source src="/assets/video/hero-optimized.mp4" type="video/mp4">
     <source src="/assets/video/hero.mp4" type="video/mp4">
-    <!-- fallback imagen -->
     <img src="/assets/img/hero-fallback.jpg" alt="Fondo de hero">
   </video>
 
-  <!-- Contenido encima -->
   <div class="container hero">
     <div class="hero-content">
       <h1 id="hero-title">Landing pages que <span style="color:var(--accent)">convierten</span></h1>
@@ -100,7 +96,6 @@
       </div>
     </div>
 
-    <!-- Cards -->
     <div class="grid" style="align-self:start">
       <div class="heroCard" data-reveal>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg>
@@ -127,16 +122,17 @@
   </div>
 </main>
 
-  <!-- ============ SERVICIOS ============ -->
 <!-- ============ SERVICIOS ============ -->
 <section id="servicios" class="pad">
   <div class="container">
     <div class="section-title" data-reveal="up">
-      <h2>Nuestros Servicios</h2>
-      <p class="section-desc">Diseñamos experiencias digitales que conectan marcas con personas.</p>
+      <h2 id="servicios-title">Nuestros Servicios</h2>
+      <p id="servicios-description" class="section-desc">Diseñamos experiencias digitales que conectan marcas con personas.</p>
     </div>
 
-    <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem;">
+    <!-- Contenedor para JS -->
+    <div class="grid" id="servicios-items" style="grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem;">
+      <!-- Los servicios originales se mantienen aquí para carga inicial -->
       <article class="service" data-reveal="right">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/></svg>
@@ -144,7 +140,6 @@
         <h3>Landing Pages</h3>
         <p>Sitios de alto impacto visual y optimizados para convertir visitantes en clientes.</p>
       </article>
-
       <article class="service" data-reveal="left">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
@@ -152,7 +147,6 @@
         <h3>Plantillas</h3>
         <p>Pack de diseños listos para WordPress, Shopify y sitios estáticos. Fáciles de usar y personalizar.</p>
       </article>
-
       <article class="service" data-reveal="up">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>
@@ -160,7 +154,6 @@
         <h3>Asesoría</h3>
         <p>Consultoría en estrategia digital: desde tu primera web hasta tu tienda online completa.</p>
       </article>
-
       <article class="service" data-reveal="scale">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -179,64 +172,54 @@
 <!-- divider section -->
 <div class="section-divider"></div>
 
-  <!-- ============ PROYECTOS ============ -->
-  <section id="proyectos" class="pad">
-    <div class="container">
-      <div class="section-title">
-        <h2>Proyectos</h2>
-        <p class="section-desc">Algunos ejemplos recientes.</p>
-      </div>
-      <div class="grid projects">
-        <!-- Card 1 -->
-        <article class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1523271152747-4a1121188589?q=80&w=1400&auto=format&fit=crop" alt="Landing para e-commerce" loading="lazy" width="1200" height="720" />
-          <div class="meta">
-            <span class="tag">E-commerce</span>
-            <h3>E-commerce optimizado</h3>
-            <p>Arquitectura de conversión y velocidad.</p>
-          </div>
-        </article>
-        <!-- Card 2 -->
-        <article class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1541560052-77ec1bbc09f7?q=80&w=1400&auto=format&fit=crop" alt="Landing de evento" loading="lazy" width="1200" height="720" />
-          <div class="meta">
-            <span class="tag">Evento</span>
-            <h3>Landing de evento</h3>
-            <p>Información clara y CTA directa.</p>
-          </div>
-        </article>
-        <!-- Card 3 -->
-        <article class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?q=80&w=1400&auto=format&fit=crop" alt="Landing corporativa" loading="lazy" width="1200" height="720" />
-          <div class="meta">
-            <span class="tag">Corporativa</span>
-            <h3>Landing corporativa</h3>
-            <p>Marca sólida y comunicación profesional.</p>
-          </div>
-        </article>
-      </div>
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos" class="pad">
+  <div class="container">
+    <div class="section-title">
+      <h2>Proyectos</h2>
+      <p class="section-desc">Algunos ejemplos recientes.</p>
     </div>
-    
-  </section>
+    <div class="grid projects">
+      <!-- Cards originales -->
+      <article class="card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1523271152747-4a1121188589?q=80&w=1400&auto=format&fit=crop" alt="Landing para e-commerce" loading="lazy" width="1200" height="720" />
+        <div class="meta">
+          <span class="tag">E-commerce</span>
+          <h3>E-commerce optimizado</h3>
+          <p>Arquitectura de conversión y velocidad.</p>
+        </div>
+      </article>
+      <article class="card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1541560052-77ec1bbc09f7?q=80&w=1400&auto=format&fit=crop" alt="Landing de evento" loading="lazy" width="1200" height="720" />
+        <div class="meta">
+          <span class="tag">Evento</span>
+          <h3>Landing de evento</h3>
+          <p>Información clara y CTA directa.</p>
+        </div>
+      </article>
+      <article class="card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?q=80&w=1400&auto=format&fit=crop" alt="Landing corporativa" loading="lazy" width="1200" height="720" />
+        <div class="meta">
+          <span class="tag">Corporativa</span>
+          <h3>Landing corporativa</h3>
+          <p>Marca sólida y comunicación profesional.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-
-<!-- CTA - descripcion -->
 <!-- ============ CTA SECTION ============ -->
 <section id="cta" class="cta-section">
-<!-- Video de fondo -->
   <video class="hero-video" autoplay muted loop playsinline>
-    <!-- versión escritorio -->
     <source src="/assets/video/hero-optimized.webm" type="video/webm">
     <source src="/assets/video/hero-optimized.mp4" type="video/mp4">
     <source src="/assets/video/hero.mp4" type="video/mp4">
-    <!-- fallback imagen -->
     <img src="/assets/img/hero-fallback.jpg" alt="Fondo de hero">
   </video>
 
-  <!-- Overlay -->
   <div class="cta-overlay"></div>
 
-  <!-- Contenido -->
   <div class="container cta-content" data-reveal> 
     <h2 class="cta-title">Impulsá tu proyecto digital</h2>
     <p class="cta-desc">
@@ -247,30 +230,30 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section id="faq" class="pad">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+    </div>
 
-  <!-- ============ FAQ ============ -->
-  <section id="faq" class="pad"> 
-    <div class="container">
-      <div class="section-title">
-        <h2>Preguntas frecuentes</h2>
-      </div>
-
+    <!-- Contenedor para JS -->
+    <div id="faq-items">
       <details class="faq" data-reveal>
         <summary>¿Tiempo de entrega?</summary>
         <div class="faq-body">Según el alcance, entre 7 y 15 días hábiles.</div>
       </details>
-
       <details class="faq" data-reveal>
         <summary>¿Qué incluye?</summary>
         <div class="faq-body">Diseño, maquetado, SEO básico, optimización y deploy.</div>
       </details>
-
       <details class="faq" data-reveal>
         <summary>¿Cómo empezamos?</summary>
         <div class="faq-body">Agendamos una llamada y definimos objetivos y estilo.</div>
       </details>
     </div>
-  </section>
+  </div>
+</section>
 
 <div class="wave-divider">
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -279,73 +262,71 @@
   </svg>
 </div>
 
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="pad">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="contacto-title">Contacto</h2>
+      <p id="contacto-description" class="section-desc">¿Listo para dar el siguiente paso? Contame sobre tu proyecto.</p>
+    </div>
 
-
-  <!-- ============ CONTACTO ============ -->
-  <section id="contacto" class="pad">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contacto</h2>
-        <p class="section-desc">¿Listo para dar el siguiente paso? Contame sobre tu proyecto.</p>
-      </div>
-
-      <!-- Para usar Netlify Forms -->
-      <form id="contactForm" name="contacto" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contacto" />
-        <div class="grid" style="grid-template-columns:1fr; gap:12px">
-          <div class="fld">
-            <label for="name">Nombre</label>
-            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
-          </div>
-          <div class="fld">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="tu@email.com" required />
-          </div>
-          <div class="fld">
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" placeholder="Contame sobre tu proyecto" required></textarea>
-          </div>
-          <div class="form-foot">
-            <label style="display:flex; gap:8px; align-items:center">
-              <input id="privacy" type="checkbox" required />
-              <span>Acepto la política de privacidad</span>
-            </label>
-            <button type="submit" class="btn btn--primary">Enviar</button>
-          </div>
+    <form id="contactForm" name="contacto" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contacto" />
+      <div class="grid" style="grid-template-columns:1fr; gap:12px">
+        <div class="fld">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Tu nombre" required />
         </div>
-        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container foot">
-      <a href="#hero" class="logo" aria-label="Inicio">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#14161a"/><path d="M7 22V10h7.2c2.2 0 3.8 1.4 3.8 3.4 0 1.6-1 2.8-2.6 3.3l3.6 5.4h-3.1l-3.2-4.9H10v4.9H7Zm3-7.6h4c1 0 1.8-.6 1.8-1.6s-.8-1.6-1.8-1.6h-4v3.2Zm13.8 7.6V10h3v12h-3Z" fill="currentColor"/></svg>
-        <span>RodriGOmez</span>
-      </a>
-      <nav class="menu" aria-label="Footer">
-        <a href="#beneficios">Beneficios</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <div class="social">
-        <a aria-label="Instagram" href="#" rel="noopener" target="_blank">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
-        </a>
-        <a aria-label="LinkedIn" href="#" rel="noopener" target="_blank">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a aria-label="X" href="#" rel="noopener" target="_blank">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20"/></svg>
-        </a>
+        <div class="fld">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="fld">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" placeholder="Contame sobre tu proyecto" required></textarea>
+        </div>
+        <div class="form-foot">
+          <label style="display:flex; gap:8px; align-items:center">
+            <input id="privacy" type="checkbox" required />
+            <span>Acepto la política de privacidad</span>
+          </label>
+          <button type="submit" class="btn btn--primary">Enviar</button>
+        </div>
       </div>
+      <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container foot">
+    <a href="#hero" class="logo" aria-label="Inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#14161a"/><path d="M7 22V10h7.2c2.2 0 3.8 1.4 3.8 3.4 0 1.6-1 2.8-2.6 3.3l3.6 5.4h-3.1l-3.2-4.9H10v4.9H7Zm3-7.6h4c1 0 1.8-.6 1.8-1.6s-.8-1.6-1.8-1.6h-4v3.2Zm13.8 7.6V10h3v12h-3Z" fill="currentColor"/></svg>
+      <span>RodriGOmez</span>
+    </a>
+    <nav class="menu" aria-label="Footer">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="social">
+      <a aria-label="Instagram" href="#" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><path d="M17.5 6.5h.01"/></svg>
+      </a>
+      <a aria-label="LinkedIn" href="#" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a aria-label="X" href="#" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20"/></svg>
+      </a>
     </div>
-    <div class="container" style="margin-top:12px; color:var(--muted); font-size:.95rem">© <span id="year"></span> RodriGOmez. Todos los derechos reservados.</div>
-  </footer>
+  </div>
+  <div class="container" style="margin-top:12px; color:var(--muted); font-size:.95rem">© <span id="year"></span> RodriGOmez. Todos los derechos reservados.</div>
+</footer>
+
 
   <!-- ============ FLOATING BUTTONS ============ -->
   <div class="fab" aria-label="Acciones rápidas">

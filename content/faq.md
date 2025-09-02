@@ -1,10 +1,10 @@
 ---
-title: "Preguntas Frecuentes"
+title: "Preguntas frecuentes"
 items:
-  - q: "¿Cuánto tarda en estar lista mi página?"
-    a: "Generalmente entre 2 y 3 semanas, dependiendo de la complejidad."
-  - q: "¿El sitio es responsive?"
-    a: "Sí, todos nuestros sitios están optimizados para móviles, tablets y computadoras."
-  - q: "¿Incluye posicionamiento SEO?"
-    a: "Sí, aplicamos optimización básica para que tu sitio se indexe correctamente en Google."
+  - q: "¿Tiempo de entrega?"
+    a: "Según el alcance, entre 7 y 15 días hábiles."
+  - q: "¿Qué incluye?"
+    a: "Diseño, maquetado, SEO básico, optimización y deploy."
+  - q: "¿Cómo empezamos?"
+    a: "Agendamos una llamada y definimos objetivos y estilo."
 ---

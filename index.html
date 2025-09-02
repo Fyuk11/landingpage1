@@ -127,6 +127,32 @@
   </div>
 </main>
 
+<script>
+async function loadContent() {
+  const res = await fetch('/content/home.md');
+  const text = await res.text();
+
+  // Parsear front matter (muy simple)
+  const match = /^---\n([\s\S]+?)\n---/.exec(text);
+  const yaml = match[1];
+  const body = text.replace(match[0], '').trim();
+
+  // Convertir YAML en objeto (acá rápido y manual)
+  const data = {};
+  yaml.split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    data[key.trim()] = rest.join(':').trim().replace(/"/g, '');
+  });
+
+  // Inyectar al DOM
+  document.getElementById('hero-title').textContent = data.title;
+  document.getElementById('hero-description').textContent = data.description;
+  document.getElementById('hero-cta').textContent = data.cta_text;
+  document.getElementById('hero-cta').href = data.cta_link;
+}
+
+loadContent();
+</script>
 
 
 
@@ -178,6 +204,54 @@
       <a href="#contacto" class="btn">Quiero más info</a>
     </div>
   </div>
+
+  <script>
+async function loadServicios() {
+  const res = await fetch('/content/servicios.md');
+  const text = await res.text();
+
+  const match = /^---\n([\s\S]+?)\n---/.exec(text);
+  const yaml = match[1];
+
+  const data = {};
+  yaml.split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    data[key.trim()] = rest.join(':').trim().replace(/"/g, '');
+  });
+
+  document.getElementById('servicios-title').textContent = data.title;
+  document.getElementById('servicios-description').textContent = data.description;
+
+  // Lista de servicios (simplificada)
+  const itemsMatch = text.match(/items:\n([\s\S]+)/);
+  if (itemsMatch) {
+    const itemsText = itemsMatch[1];
+    const items = itemsText.split('- title:').slice(1).map(item => {
+      const [titleLine, descLine, iconLine] = item.split('\n').map(l => l.replace(/^-?\s*/, '').trim());
+      return {
+        title: titleLine,
+        text: descLine.replace('text: ', ''),
+        icon: iconLine.replace('icon: ', '')
+      };
+    });
+
+    const container = document.getElementById('servicios-items');
+    container.innerHTML = '';
+    items.forEach(i => {
+      const card = document.createElement('article');
+      card.className = 'service';
+      card.innerHTML = `
+        <div class="icon">${i.icon}</div>
+        <h3>${i.title}</h3>
+        <p>${i.text}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
+}
+
+loadServicios();
+</script>
 </section>
 
 <!-- divider section -->
@@ -274,6 +348,45 @@
         <div class="faq-body">Agendamos una llamada y definimos objetivos y estilo.</div>
       </details>
     </div>
+
+
+    <script>
+async function loadFAQ() {
+  const res = await fetch('/content/faq.md');
+  const text = await res.text();
+
+  const match = /^---\n([\s\S]+?)\n---/.exec(text);
+  const yaml = match[1];
+
+  const data = {};
+  yaml.split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    data[key.trim()] = rest.join(':').trim().replace(/"/g, '');
+  });
+
+  document.getElementById('faq-title').textContent = data.title;
+
+  const itemsMatch = text.match(/items:\n([\s\S]+)/);
+  if (itemsMatch) {
+    const itemsText = itemsMatch[1];
+    const items = itemsText.split('- q:').slice(1).map(item => {
+      const [qLine, aLine] = item.split('\n').map(l => l.replace(/^-?\s*/, '').trim());
+      return { q: qLine, a: aLine.replace('a: ', '') };
+    });
+
+    const container = document.getElementById('faq-items');
+    container.innerHTML = '';
+    items.forEach(i => {
+      const details = document.createElement('details');
+      details.className = 'faq';
+      details.innerHTML = `<summary>${i.q}</summary><div class="faq-body">${i.a}</div>`;
+      container.appendChild(details);
+    });
+  }
+}
+
+loadFAQ();
+</script>
   </section>
 
 <!----
@@ -299,7 +412,28 @@
         <h2>Contacto</h2>
         <p class="section-desc">¿Listo para dar el siguiente paso? Contame sobre tu proyecto.</p>
       </div>
+<script>
+async function loadContacto() {
+  const res = await fetch('/content/contacto.md');
+  const text = await res.text();
 
+  const match = /^---\n([\s\S]+?)\n---/.exec(text);
+  const yaml = match[1];
+
+  const data = {};
+  yaml.split('\n').forEach(line => {
+    const [key, ...rest] = line.split(':');
+    data[key.trim()] = rest.join(':').trim().replace(/"/g, '');
+  });
+
+  document.getElementById('contacto-title').textContent = data.title;
+  document.getElementById('contacto-description').textContent = data.description;
+
+  // Podés usar data.email si querés inyectar en el form action
+}
+
+loadContacto();
+</script>
 
       <!-- Para usar Netlify Forms -->
       <form id="contactForm" name="contacto" method="POST" data-netlify="true">

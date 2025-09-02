@@ -1,5 +1,5 @@
 ---
-title: "Contáctanos"
-description: "Escríbenos y diseñemos juntos tu nuevo sitio web."
-email: "tuemail@dominio.com"
+title: "Contacto"
+description: "¿Listo para dar el siguiente paso? Contame sobre tu proyecto."
+email: "tu@email.com"
 ---

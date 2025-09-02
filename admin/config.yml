@@ -1,37 +1,43 @@
 backend:
   name: git-gateway
-  branch: main # o master, según tu repo
+  branch: main
 
-media_folder: "assets/uploads" # imágenes que subas desde el CMS
+media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  # Página principal
+  # Página principal (archivo único)
   - name: "home"
     label: "Home"
-    file: "content/home.md"
-    fields:
-      - { label: "Título principal", name: "title", widget: "string" }
-      - { label: "Descripción hero", name: "description", widget: "text" }
-      - { label: "CTA texto", name: "cta_text", widget: "string" }
-      - { label: "CTA link", name: "cta_link", widget: "string", default: "#contacto" }
+    files:
+      - file: "content/home.md"
+        label: "Página principal"
+        name: "home"
+        fields:
+          - { label: "Título principal", name: "title", widget: "string" }
+          - { label: "Descripción hero", name: "description", widget: "text" }
+          - { label: "CTA texto", name: "cta_text", widget: "string" }
+          - { label: "CTA link", name: "cta_link", widget: "string", default: "#contacto" }
 
-  # Servicios
+  # Servicios (archivo único)
   - name: "servicios"
     label: "Servicios"
-    file: "content/servicios.md"
-    fields:
-      - { label: "Título sección", name: "title", widget: "string" }
-      - { label: "Descripción sección", name: "description", widget: "text" }
-      - label: "Lista de servicios"
-        name: "items"
-        widget: "list"
+    files:
+      - file: "content/servicios.md"
+        label: "Sección Servicios"
+        name: "servicios"
         fields:
-          - { label: "Título", name: "title", widget: "string" }
-          - { label: "Descripción", name: "text", widget: "text" }
-          - { label: "Icono (SVG)", name: "icon", widget: "text" }
+          - { label: "Título sección", name: "title", widget: "string" }
+          - { label: "Descripción sección", name: "description", widget: "text" }
+          - label: "Lista de servicios"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "text", widget: "text" }
+              - { label: "Icono (SVG)", name: "icon", widget: "text" }
 
-  # Proyectos
+  # Proyectos (carpeta, múltiples archivos)
   - name: "proyectos"
     label: "Proyectos"
     folder: "content/proyectos"
@@ -43,24 +49,30 @@ collections:
       - { label: "Tag", name: "tag", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
 
-  # FAQ
+  # FAQ (archivo único)
   - name: "faq"
     label: "FAQ"
-    file: "content/faq.md"
-    fields:
-      - { label: "Título sección", name: "title", widget: "string" }
-      - label: "Preguntas"
-        name: "items"
-        widget: "list"
+    files:
+      - file: "content/faq.md"
+        label: "Sección FAQ"
+        name: "faq"
         fields:
-          - { label: "Pregunta", name: "q", widget: "string" }
-          - { label: "Respuesta", name: "a", widget: "text" }
+          - { label: "Título sección", name: "title", widget: "string" }
+          - label: "Preguntas"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Pregunta", name: "q", widget: "string" }
+              - { label: "Respuesta", name: "a", widget: "text" }
 
-  # Contacto
+  # Contacto (archivo único)
   - name: "contacto"
     label: "Contacto"
-    file: "content/contacto.md"
-    fields:
-      - { label: "Título sección", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Email destino", name: "email", widget: "string" }
+    files:
+      - file: "content/contacto.md"
+        label: "Sección Contacto"
+        name: "contacto"
+        fields:
+          - { label: "Título sección", name: "title", widget: "string" }
+          - { label: "Descripción", name: "description", widget: "text" }
+          - { label: "Email destino", name: "email", widget: "string" }

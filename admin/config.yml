@@ -1,22 +1,37 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # o master, según tu repo
 
-media_folder: "assets/images/uploads"   # Carpeta donde suben imágenes
-public_folder: "/assets/images/uploads"
+media_folder: "assets/uploads" # imágenes que subas desde el CMS
+public_folder: "/assets/uploads"
 
 collections:
+  # Página principal
   - name: "home"
-    label: "Página Principal"
-    files:
-      - label: "Contenido Home"
-        name: "home"
-        file: "content/home.md"
-        fields:
-          - { label: "Título Hero", name: "hero_title", widget: "string" }
-          - { label: "Texto Hero", name: "hero_text", widget: "text" }
-          - { label: "CTA Texto", name: "cta_text", widget: "string" }
+    label: "Home"
+    file: "content/home.md"
+    fields:
+      - { label: "Título principal", name: "title", widget: "string" }
+      - { label: "Descripción hero", name: "description", widget: "text" }
+      - { label: "CTA texto", name: "cta_text", widget: "string" }
+      - { label: "CTA link", name: "cta_link", widget: "string", default: "#contacto" }
 
+  # Servicios
+  - name: "servicios"
+    label: "Servicios"
+    file: "content/servicios.md"
+    fields:
+      - { label: "Título sección", name: "title", widget: "string" }
+      - { label: "Descripción sección", name: "description", widget: "text" }
+      - label: "Lista de servicios"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Descripción", name: "text", widget: "text" }
+          - { label: "Icono (SVG)", name: "icon", widget: "text" }
+
+  # Proyectos
   - name: "proyectos"
     label: "Proyectos"
     folder: "content/proyectos"
@@ -25,4 +40,27 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Tag", name: "tag", widget: "string" }
       - { label: "Imagen", name: "image", widget: "image" }
+
+  # FAQ
+  - name: "faq"
+    label: "FAQ"
+    file: "content/faq.md"
+    fields:
+      - { label: "Título sección", name: "title", widget: "string" }
+      - label: "Preguntas"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "Pregunta", name: "q", widget: "string" }
+          - { label: "Respuesta", name: "a", widget: "text" }
+
+  # Contacto
+  - name: "contacto"
+    label: "Contacto"
+    file: "content/contacto.md"
+    fields:
+      - { label: "Título sección", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Email destino", name: "email", widget: "string" }

@@ -1,7 +1,7 @@
 ---
-title: "Impulsa tu negocio con una web profesional"
-description: "Creamos sitios modernos, rápidos y optimizados para que generes más clientes."
-cta_text: "Hablemos"
+title: Impulsa tu negocio con una web profesional
+description: Creamos sitios modernos, rápidos y optimizados para que generes más clientes.
+cta_text: Hablemos ahora
 cta_link: "#contacto"
 ---
 <section id="hero">
